@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+
+    {% block content %}
+		<div class = "body_box">
+            <h4>들려주기</h4>
+            <br/>
+            <ul>
+            <table>
+            	<tr>
+            		<th> 나는 요즘에 &nbsp;&nbsp;&nbsp;</th> 
+            		<td> 당신의 느낌을 한 문장으로 표현해 주세요. </td>
+            	</tr>
+            	<tr>
+            		<th> 내가 이런지는 &nbsp;&nbsp;&nbsp;</th>
+            		<td> 이 느낌은 언제부터 지속되었는지 알려주세요. </td>
+            	</tr>
+            	<tr>
+            		<th> 그래서 나는 &nbsp;&nbsp;&nbsp;</th>
+            		<td> 그래서 당신은 무엇을 했는지 알려주세요. </td>
+            	</tr>
+            </table>
+            </ul>
+            <hr/>
+            <br/>
+				<form method="POST" class="post-form">{% csrf_token %}
+				나는 요즘에  &nbsp; {{ form.how }} <br />
+				<br />
+				내가 이런지는 &nbsp;{{ form.when }} <br />
+				<br />
+				그래서 나는 &nbsp; {{ form.so }} <br />
+				<br/>
+				<button type="save" class="save btn btn-default" style="float:right;">보내기</button>
+				</br>
+				</form>
+		</div>
+    {% endblock %}

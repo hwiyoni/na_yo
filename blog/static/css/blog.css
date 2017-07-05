@@ -1,0 +1,168 @@
+@charset "utf-8"
+
+body{
+    background-color: #efefef;
+}
+
+.page-header {
+    margin: 10px 0 20px;
+    margin-top: 10;
+    padding: 1px 20px 5px 30px;
+}
+    font-size: 25pt;
+.page-header h3, .page-header h3 a, .page-header h3 a:visited, .page-header h3 a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#top-menu ul {
+
+    list-style-type:none;
+    padding-left:0px;
+    float:right;
+    margin-right: 20px;
+    margin-top: 45px;
+}
+#top-menu ul li {
+display:inline;
+border-left: 1px solid #c0c0c0;
+font-color: #6d6d6d;
+padding: 0px 10px 0px 10px;
+margin: 5px 0px 5px 0px;
+}
+#top-menu ul li:first-child {
+border-left: none;
+}
+
+.body_box {
+    background-color:#ffffff;
+    border:1px solid; 
+    padding:40px; 
+    border-color:#dddddd
+}
+.body_box ul {
+
+    padding-left:25px;
+    font-size: 14px;
+}
+.small_box {
+    background-color:#ffffff;
+    border:1px solid;
+    border-color:#d3d3d3; 
+    padding-top:15px;
+    padding-right:15px;
+    padding-left:15px;
+    padding-bottom:5px;
+    margin-top:30;
+}
+.small_box ul {
+    font-size: 12px;
+    float:right;
+}
+
+#id_date {
+    margin-top:10px;
+    float: right;
+}
+#id_search_word {
+    margin-top:5px;
+    width: 300px;
+    height: 30px;
+}
+
+#id_how {
+    margin-top:5px;
+    width: 300px;
+    height: 30px;
+}
+
+#id_when {
+    margin-top:5px;
+    width: 292px;
+    height: 30px;
+}
+
+#id_so {
+    margin-top:5px;
+    width: 300px;
+    height: 30px;
+}
+.post_form{
+    float:center;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+p {
+    font-size: 15px;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 13pt;
+}
+
+
+.container{
+    width:500px;
+    margin-top: 0px;
+
+}
+    h4{
+        font-size: 20;
+    }
+
+
+@media screen and (max-width:640px){
+    h4{
+        font-size: 25;
+    }
+    element.style{
+        padding: 30px;
+    }
+    .container{
+        width: 400px;
+        margin-top: 0px;
+        padding-right: 25px;
+        padding-left: 20px;
+    }
+    #id_search_word{
+        margin-top: 10px;
+        width: 290px;
+        height: 30px;
+    }
+    body{
+        background-color: #efefef;
+        font-size: 15px;
+    }
+    .small_box {
+    font-size: 15px;
+    }
+    .small_box ul {
+    padding-left:0px;
+    padding-right:0px;
+    font-size: 15px;
+    }
+    .body_box {
+    padding-left:30px;
+    padding-right:30px;
+    font-size: 14px;
+    }
+    .body_box ul {
+    padding-left:0px;
+    padding-right:0px;
+    font-size: 15px;
+    }
+
+#id_when {
+    margin-top:5px;
+    width: 300px;
+    height: 30px;
+    }
+.post_form{
+    float:center;
+    }
+    
+}

@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>나는 요즘에</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+     <body>
+        <div id="top-menu">
+            <ul>
+            <li><a href="{% url 'search' %}"> 검색하기 </a></li>
+            <li><a href="{% url 'post_i' %}"> 들려주기 </a></li>
+            <li><a href="{% url 'post_they' %}"> 살펴보기 </a></li>
+            </ul>
+        </div>
+        <div class="page-header">
+        <a href= "{% url 'main' %}"><img src = "/static/logo.png" style="width: 80px; height: auto;"></a>
+        </div>
+
+
+        <br />
+        <div class="content container">
+                {% block content %}
+                {% endblock %}
+        </div>
+    </body>
+</html>

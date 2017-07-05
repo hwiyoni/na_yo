@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+    {% block content %}
+
+        <div class = "body_box">
+            <h4>살펴보기</h4>
+            <br/>
+            <ul> 그들은 요즘에 어떨까? <br/>
+                 사람들이 들려주는 이야기가 실시간으로 올라옵니다
+            </ul>
+            <br/>
+            <hr/>
+            <br/>
+            {% for post in posts %}
+                <div class= "small_box">
+                나는 요즘에 {{ post.how }}<br />
+                내가 이런지는 {{ post.when }}<br />
+                그래서 나는 {{ post.so }}<br />
+                <br />
+                    <ul>
+                    {{ post.published_date }}
+                    </ul>
+                <br />
+                </div>
+                <br />
+            {% endfor %}
+        </div> 
+    {% endblock %}

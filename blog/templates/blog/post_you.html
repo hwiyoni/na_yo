@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>나는 요즘에</title>
+    </head>
+    <body>
+        <div class="page-header">
+            <h2><a href="/">나는 요즘에</a></h2>
+                <h3><a href="{% url 'post_i' %}">나는  
+                <a href="{% url 'post_you' %}"> 너는 
+                <a href="{% url 'post_they' %}"> 그들은</a>
+            </div>
+        </div>
+        <hr />
+        <div>
+            검색
+        </div>
+    </body>
+</html>
+
