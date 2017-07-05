@@ -39,6 +39,8 @@ class SearchFormView(FormView):
     template_name = 'blog/post_search.html'
         
     def form_valid(self, form):
+        if self.request.user.is_authenticated():
+            form.instance.user = self.request.user
         q = None
         schLine = '%s' % self.request.POST['search_word']
         schWord = schLine.split()
