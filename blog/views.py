@@ -19,7 +19,7 @@ def post_i(request): #post_new
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
+            post.author = request.user.id
             post.published_date = timezone.now()
             post.save()
             return redirect('post_they')
@@ -39,8 +39,6 @@ class SearchFormView(FormView):
     template_name = 'blog/post_search.html'
         
     def form_valid(self, form):
-        if self.request.user.is_authenticated():
-            form.instance.user = self.request.user
         q = None
         schLine = '%s' % self.request.POST['search_word']
         schWord = schLine.split()
