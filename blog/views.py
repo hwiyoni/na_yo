@@ -19,7 +19,7 @@ def post_i(request): #post_new
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user.id
+            post.author = request.user
             post.published_date = timezone.now()
             post.save()
             return redirect('post_they')
