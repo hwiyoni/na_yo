@@ -5,15 +5,20 @@ from django.utils import timezone
 from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.utils.decorators import method_decorator
+
 
 from django.views.generic.edit import FormView
 from .forms import PostSearchForm
 from django.db.models import Q
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def main(request):
     return render(request, 'blog/main.html', {})
 
+@login_required
 def post_i(request): #post_new
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -27,9 +32,11 @@ def post_i(request): #post_new
         form = PostForm()
     return render(request, 'blog/post_i.html', {'form': form})
 
+@login_required
 def post_you(request):
     return render(request, 'blog/post_you.html', {})
 
+@login_required
 def post_they(request): #post_list
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_they.html', {'posts': posts})

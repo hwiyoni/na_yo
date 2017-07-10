@@ -114,6 +114,11 @@ h3 {
         font-size: 20;
     }
 
+.login{
+    margin-top: 200px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
 
 @media only screen and (min-width:300px) and (max-width:480px){
     head{

@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>나는 요즘에</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1, user-scalable=yes,target-densitydpi=device-dpi">
+    </head>
+     <body>
+        <div id="top-menu">
+            <ul>
+            <li><a href="{% url 'search' %}"> 검색하기 </a></li>
+            <li><a href="{% url 'post_i' %}"> 들려주기 </a></li>
+            <li><a href="{% url 'post_they' %}"> 살펴보기 </a></li>
+            </ul>
+        </div>
+        <div class="page-header">
+        <a href= "{% url 'main' %}"><img src = "/static/logo.png" style="width: 80px; height: auto;"></a>
+        </div>
+	     <div class = "body_box">
+	     	<table>
+		    <tr> <td> 아이디 : anony </td> &nbsp; <td> 비밀번호 : anony </td> </tr>
+		    </table>
+			{% if form.errors %}
+			<p>아이디와 비밀번호가 일치하지 않습니다. <br/> 다시 시도해주세요.</p>
+			{% endif %}
+			<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+			{% csrf_token %}
+			<table>
+			<br/>
+			<tr>
+			    <td> 아이디 </td>
+			    <td>{{ form.username }}</td>
+			</tr>
+			<tr>
+			    <td> 비밀번호 &nbsp;</td>
+			    <td>{{ form.password }}</td>
+			</tr>
+			</table>
+			<br />
+			<button type="submit" value="login" style="float:right"/> 로그인 </button>
+			<input type="hidden" name="next" value="{{ next }}" />
+		
+
+			</form>
+		</div>
+    </body>
+</html>
+
+
+
